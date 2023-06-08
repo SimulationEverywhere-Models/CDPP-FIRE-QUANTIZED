@@ -1,0 +1,32 @@
+Modifications of the Corsican Fire Simulation
+
+This model attemps to model the spread of fire across a fuel bed
+under uniform wind and slope conditions. 
+
+- FireCorse.bat/FireCorse.bat
+
+The original FireCorse model from the model library
+
+- FireTest1.bat/FireTest1.bat
+
+A much simplified, faster executing version of the model.
+Cells ignore the temperature of their neighbours, and follow
+their own temperature curve, based on a reprsentative 
+curve from the FireCorse model. Time steps are variable
+based on this curve.
+
+Includes "rules1.inc" by default, which uses a hard coded
+quanta of 1 for the temperature steps. rules5.inc and rules20.inc
+have the quanta set to 5 and 20, respectively. Other values
+may be edited into these files easily (there is only one macro,
+called q, which holds the quanta value).
+
+- FireTest2.bat/FireTest2.bat
+
+Attempts to combine the good aspects of the two models,
+with limited success. Uses a variable time step as in
+FireTest1, but calculates temperature relative to
+neighbours as in FireCorse. Includes "rules20.inc"
+by default for a temperature step quanta of 20, and sets
+a CD++ quanta of 20 in the batch file.
+
